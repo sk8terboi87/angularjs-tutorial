@@ -11,16 +11,16 @@ module.exports = function( grunt ) {
     // ---------------------
 
     // specify an alternate install location for Bower
-    bower: {
-      dir: 'app/components'
-    },
+    // bower: {
+    //   dir: 'app/components'
+    // },
 
     // Coffee to JS compilation
     coffee: {
       compile: {
         files: {
-          'app/scripts/*.js': 'app/scripts/**/*.coffee',
-          'test/spec/*.js': 'test/spec/**/*.coffee'
+          'app/scripts/*.js': 'coffee/**/*.coffee'
+          // 'test/spec/*.js': 'tSest/spec/**/*.coffee'
         }
       }
     },
@@ -175,3 +175,4 @@ module.exports = function( grunt ) {
     });
   });
 };
+  
