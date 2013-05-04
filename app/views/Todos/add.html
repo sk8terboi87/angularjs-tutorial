@@ -1,0 +1,13 @@
+<div ng-include="'views/Todos/list.html'"></div>
+<form ng-submit="save()">
+    <fieldset>
+        <legend>Add Something...</legend>
+        <div class="control-group">
+        	<input type="text" placeholder="Type something…" class="input-xxlarge" ng-model="note" required/>
+        </div>
+    </fieldset>
+	<p>
+		<button type="submit" class="btn btn-success btn-medium">Save</button>
+		<a ng-click="clear()" class="btn btn-medium">Clear</a>
+	</p>
+</form>

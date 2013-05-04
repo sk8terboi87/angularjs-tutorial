@@ -1,12 +1,20 @@
 (function() {
-  var angularjsTutorialApp;
 
-  angularjsTutorialApp = angular.module("angularjsTutorialApp", []).config([
+  this.angTut = angular.module("angTut", ['LocalStorageModule']);
+
+  this.angTut.config([
     "$routeProvider", function($routeProvider) {
-      return $routeProvider.when("/", {
-        templateUrl: "views/main.html",
-        controller: "MainCtrl"
-      }).otherwise({
+      var $routerprovider;
+      $routerprovider = $routeProvider;
+      $routeProvider.when("/", {
+        templateUrl: "views/Pages/welcome.html",
+        controller: "PagesController"
+      });
+      $routeProvider.when("/add", {
+        templateUrl: "views/Todos/add.html",
+        controller: "TodosController"
+      });
+      return $routeProvider.otherwise({
         redirectTo: "/"
       });
     }
