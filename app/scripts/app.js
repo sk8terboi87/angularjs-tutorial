@@ -1,6 +1,6 @@
 (function() {
 
-  this.angTut = angular.module("angTut", ['LocalStorageModule']);
+  this.angTut = angular.module("angTut", ['LocalStorageModule', 'ngResource']);
 
   this.angTut.config([
     "$routeProvider", function($routeProvider) {

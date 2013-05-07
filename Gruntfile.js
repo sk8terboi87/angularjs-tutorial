@@ -32,7 +32,7 @@ module.exports = function( grunt ) {
         options: {
           css_dir: 'app/styles',
           sass_dir: 'app/styles',
-          images_dir: 'app/images',
+          images_dir: '/images',
           javascripts_dir: 'app/scripts',
           force: false
         }
@@ -175,4 +175,3 @@ module.exports = function( grunt ) {
     });
   });
 };
-  

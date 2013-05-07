@@ -1,16 +1,21 @@
 (function() {
   "use strict";
 
-  this.angTut.controller('TodosController', function($scope, todoService) {
+  this.angTut.controller('TodosController', function($scope, myHttpInterceptor, todoService, Video, $q) {
+    var promise;
+    $scope.idiota = {
+      name: ''
+    };
     $scope.save = function() {
       todoService.add($scope.note);
+      promise.then();
       return $scope.list();
     };
     $scope.clear = function() {
       todoService.clear();
       return $scope.list();
     };
-    return $scope.list = function() {
+    $scope.list = function() {
       var i, storedNotes, _results;
       $scope.notes = [];
       storedNotes = todoService.get(true);
@@ -24,6 +29,15 @@
         return _results;
       }
     };
+    $scope.updateRecord = function(response) {
+      $scope.idiota = response;
+      console.log('test');
+      return $scope.idiota.name = 'fuck';
+    };
+    $scope.getData = function() {
+      return $scope.updateRecord(todoService.getExternal());
+    };
+    return promise = $scope.getData();
   });
 
 }).call(this);

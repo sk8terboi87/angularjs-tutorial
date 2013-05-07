@@ -1,4 +1,4 @@
-@angTut = angular.module("angTut", ['LocalStorageModule']);
+@angTut = angular.module("angTut", ['LocalStorageModule', 'ngResource']);
 
 @angTut.config(["$routeProvider", ($routeProvider) ->
 	$routerprovider = $routeProvider;

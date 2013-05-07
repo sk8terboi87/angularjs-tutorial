@@ -1,10 +1,18 @@
 "use strict"
 @angTut.controller('TodosController', (
 	$scope
+	myHttpInterceptor
 	todoService
+	Video
+	$q
 ) ->
+	$scope.idiota = {
+		name: ''
+	}
+
 	$scope.save = ->
 		todoService.add($scope.note)
+		promise.then()
 		$scope.list()
 
 	$scope.clear = ->
@@ -19,5 +27,23 @@
 			while i < storedNotes.length
 			  $scope.notes.push storedNotes[i]
 			  i++
+
+	$scope.updateRecord = (response) ->
+		$scope.idiota = response
+		console.log 'test'
+		$scope.idiota.name = 'fuck'
+
+	$scope.getData = ->
+		$scope.updateRecord(todoService.getExternal())
+	# 	defer = $q.defer()
+	# 	defer.resolve($scope.updateRecord(Video.update()))
+	# 	return defer.promise
+		# defer.promise.then ->
+		# 	$scope.updateRecord(Video.update())
+		# return defer.
+		# defer.resolve()
+		# console.log 'test'
+
+	promise = $scope.getData()
 
 )
