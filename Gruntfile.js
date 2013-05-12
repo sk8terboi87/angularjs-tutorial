@@ -5,6 +5,7 @@ module.exports = function( grunt ) {
   //
   // https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
   //
+  grunt.loadNpmTasks('grunt-jade');
   grunt.initConfig({
 
     // Project configuration
@@ -49,6 +50,13 @@ module.exports = function( grunt ) {
       coffee: {
         files: 'coffee/**/*.coffee',
         tasks: 'coffee reload'
+      },
+      jade: {
+        files:  [
+          'jade/*.jade',
+          'jade/views/**/*.jade'
+        ],
+        tasks: 'jade reload'
       },
       compass: {
         files: [
@@ -151,6 +159,18 @@ module.exports = function( grunt ) {
       dist: '<config:rev.img>'
     },
 
+    jade: {
+      html: {
+        files: {
+          'app/views/': ['jade/*.jade', 'jade/**/*.jade']
+        },
+        options: {
+          basePath: 'jade/',
+          pretty: true,
+          client: false
+        }
+      }
+    },
     // rjs configuration. You don't necessarily need to specify the typical
     // `path` configuration, the rjs task will parse these values from your
     // main module, using http://requirejs.org/docs/optimization.html#mainConfigFile
@@ -166,6 +186,7 @@ module.exports = function( grunt ) {
     }
   });
 
+
   // Alias the `test` task to run `testacular` instead
   grunt.registerTask('test', 'run the testacular test driver', function () {
     var done = this.async();
@@ -174,4 +195,6 @@ module.exports = function( grunt ) {
       done(err);
     });
   });
+  grunt.renameTask('server', 'original-server');
+  grunt.registerTask('server', 'jade original-server');
 };

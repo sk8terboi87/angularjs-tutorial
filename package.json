@@ -3,5 +3,8 @@
   "name": "",
   "version": "0.0.0",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt-contrib-jade": "~0.5.1",
+    "grunt-jade": "~0.4.0"
+  }
 }
