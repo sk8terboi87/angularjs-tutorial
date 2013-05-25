@@ -1,0 +1,15 @@
+<form>
+    <fieldset>
+        <legend>Lets upload something...</legend>
+        <div class="control-group">
+        	<input id="testUpload" type="file" fileupload name="files[]" uploadurl="uploadReturn.uploadurl" done="uploadLayer(e, data, 'done')" fail="uploadLayer(e, data, 'fail')" progress="uploadLayer(e, data, 'progress')">
+			<div class="well" ng-show="uploadReturn.status">
+				{{uploadReturn.message}}
+				<div ng-show="!uploadReturn.error">
+					<p class="label label-info">File: {{uploadReturn.successData.name}}</p>
+					<p><a href="{{uploadReturn.successData.fullUrl}}" target="_blank">View file</a></p>
+				</div>
+			</div>
+        </div>
+    </fieldset>
+</form>
