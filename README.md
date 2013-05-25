@@ -4,6 +4,11 @@ angularjs-tutorial
 Tutorial for AngularJs (and things to come by)
 
 
+Branch: Learning
+---------------------------------
+Blueimp Implemenation of Simple file uploader with CORS
+http://code-like-a-poem.blogspot.in/2013/05/angularjs-tutorial-4-file-upload-using.html
+
 Branch: structuring-automatting
 ---------------------------------
 Setup created using AngularJs, Bower, Yeoman & Grunt created.
