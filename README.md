@@ -3,7 +3,8 @@ angularjs-tutorial
 
 Tutorial for AngularJs (and things to come by)
 
-Don't forget to do a 'bower install' after checkout.(Read this for more: http://code-like-a-poem.blogspot.in/2013/04/angularjs-tutorial-2-structuring-and.html)
+Don't forget to do a 'bower install' after checkout.
+(Read this for more: http://code-like-a-poem.blogspot.in/2013/04/angularjs-tutorial-2-structuring-and.html)
 
 Branch: Learning
 ---------------------------------
