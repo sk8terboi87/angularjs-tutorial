@@ -30,9 +30,7 @@
       }
     };
     $scope.updateRecord = function(response) {
-      $scope.idiota = response;
-      console.log('test');
-      return $scope.idiota.name = 'fuck';
+      return $scope.idiota = response;
     };
     $scope.getData = function() {
       return $scope.updateRecord(todoService.getExternal());

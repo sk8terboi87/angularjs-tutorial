@@ -30,8 +30,6 @@
 
 	$scope.updateRecord = (response) ->
 		$scope.idiota = response
-		console.log 'test'
-		$scope.idiota.name = 'fuck'
 
 	$scope.getData = ->
 		$scope.updateRecord(todoService.getExternal())
