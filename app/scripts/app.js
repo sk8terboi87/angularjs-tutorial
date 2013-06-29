@@ -2,7 +2,7 @@
 
   this.angTut = angular.module("angTut", ['LocalStorageModule', 'ngResource', 'uploaderComponent']);
 
-  this.angTut.constant('uploadServiceUrl', 'http://192.168.0.2/api/index.php');
+  this.angTut.constant('uploadServiceUrl', 'http://192.168.0.3/api/index.php');
 
   this.angTut.config([
     "$routeProvider", function($routeProvider) {
@@ -18,6 +18,10 @@
       });
       $routeProvider.when("/upload", {
         templateUrl: "views/Todos/upload.html",
+        controller: "TodosUploadController"
+      });
+      $routeProvider.when("/upload_with_custom_data", {
+        templateUrl: "views/Todos/upload_with_custom_data.html",
         controller: "TodosUploadController"
       });
       return $routeProvider.otherwise({
