@@ -7,7 +7,8 @@
         done: "&",
         progress: "&",
         fail: "&",
-        uploadurl: "="
+        uploadurl: "=",
+        customdata: "&"
       },
       link: function(scope, elem, attrs) {
         var uploadOptions;
@@ -45,7 +46,11 @@
             });
           };
         }
-        return elem.fileupload(uploadOptions);
+        return elem.fileupload(uploadOptions).bind("fileuploadsubmit", function(e, data) {
+          return data.formData = {
+            params: JSON.stringify(scope.customdata())
+          };
+        });
       }
     };
   });

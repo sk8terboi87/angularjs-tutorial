@@ -6,6 +6,7 @@ angular.module("uploaderComponent", [])
     progress: "&"
     fail: "&"
     uploadurl: "="
+    customdata: "&"
 
   link: (scope, elem, attrs) ->
     uploadOptions =
@@ -33,4 +34,6 @@ angular.module("uploaderComponent", [])
             e: e
             data: data
 
-    elem.fileupload uploadOptions
+    elem.fileupload(uploadOptions).bind "fileuploadsubmit", (e, data) ->
+      data.formData =
+        params: JSON.stringify(scope.customdata())

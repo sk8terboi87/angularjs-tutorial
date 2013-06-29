@@ -1,0 +1,30 @@
+<form class="form-horizontal">
+    <fieldset>
+        <legend>Lets upload something... (Along with some other data)</legend>
+	    <div class="control-group">
+	      <label class="control-label" for="firstName">Firstname</label>
+	      <div class="controls">
+	        <input type="text" id="firstName" ng-model='firstname' placeholder="Type your firstname">
+	      </div>
+	    </div>
+	    <div class="control-group">
+	      <label class="control-label" for="lastName">Password</label>
+	      <div class="controls">
+	        <input type="text" id="lastName" ng-model='lastname' placeholder="Type your lastname">
+	      </div>
+	    </div>
+        <div class="control-group">
+	      <label class="control-label" for="lastName">Select your Avatar</label>
+        	<div class="controls">
+        		<input id="testUpload" type="file" fileupload customdata="customData()" name="files[]" uploadurl="uploadReturn.uploadurl" done="uploadLayer(e, data, 'done')" fail="uploadLayer(e, data, 'fail')" progress="uploadLayer(e, data, 'progress')">
+			</div>
+			<div class="well" ng-show="uploadReturn.status">
+				{{uploadReturn.message}}
+				<div ng-show="!uploadReturn.error">
+					<p class="label label-info">File: {{uploadReturn.successData.name}}</p>
+					<p><a href="{{uploadReturn.successData.fullUrl}}" target="_blank">View file</a></p>
+				</div>
+			</div>
+        </div>
+    </fieldset>
+</form>
